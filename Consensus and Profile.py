@@ -28,14 +28,14 @@ for i in range(len(dna_strings)): #loops m times
 
 
 consensus = ""
-for i in range(len(dna_strings[0])): # loops n times
+for i in range(len(dna_strings[0])): # loops n times. Is the first loop because string must be of length n
     max_char = ""
     max_count = 0
     for key in profile.keys(): #loops 4 times
         if profile[key][i] > max_count: #checks which value within a specific index is the greatest and then stores it and its count to compare to the next key's value
-            max_char = key
+            max_char = key # key is the codon that is most frequent
             max_count = profile[key][i]
-    consensus+= max_char
+    consensus+= max_char #adds the most frequent codon character within a specific index to the consensus string
 print(consensus)
 
 
